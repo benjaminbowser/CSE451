@@ -1,0 +1,15 @@
+#!/bin/bash
+#Scott Campbell -cse451 Spring 2019 - use curl to exercise api
+
+echo "get keys"
+curl http://campbest.451.csi.miamioh.edu/cse451-campbest-web-public/week2/week2-rest.php/api/v1/info -i
+
+echo
+echo ********
+echo get test1
+curl  -X POST -d '{"key":"test1"}' -H "Content-Type:application/json" http://campbest.451.csi.miamioh.edu/cse451-campbest-web-public/week2/week2-rest.php/api/v1/info -i
+
+echo
+echo ********
+echo get invalid key
+curl  -X POST -d '{"key":"foo"}' -H "Content-Type:application/json" http://campbest.451.csi.miamioh.edu/cse451-campbest-web-public/week2/week2-rest.php/api/v1/info -i
